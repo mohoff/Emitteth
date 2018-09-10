@@ -6,7 +6,7 @@ Emitteth is an event emitter for the Ethereum blockchain. Besides web3-supported
 
 Supported events, which can be subscribed to via Node's `EventEmitter` interface:
 
-- `mined`: Same as `logs`.
+- `mined`: Same as web3's `logs`.
 - `confirmed`: Like `mined` but only emitted after a defined number of block confirmations passed.
 - `latereconfirm`: A log that is part of a chain reorganization (reorg) but is old enough so that it fell out the block confirmation buffer. Example: If you configured emitteth in a way that it emits events after 2 block confirmations, a `lateconfirm` means that a log was recaptured at block depth n-3 or older. The higher the block confirmation number, the less frequent this event is emitted.
 - `lateunconfirm`: Similar to `latereconfirm`, however, this event type states that a log was removed (`log.removed==true`) from the part of the chain effected by the reorg.
@@ -14,8 +14,20 @@ Supported events, which can be subscribed to via Node's `EventEmitter` interface
 - `approved`: An ERC20 `Approve` event was emitted by an observed contract.
 - `traded`: One or more 0x `LogFill`(s) were emitted that collectively represent a settled trade.
 - `cancelled`: A 0x `LogCancel` was emitted that represents a hard-cancelled order.
-- `newblock`: Same as `newBlockHeaders`
-- `pending`: Same as `pendingTransactions`
+- `newblock`: Same as web3's `newBlockHeaders`
+- `pending`: Same as web3's `pendingTransactions`
+
+## Installation
+
+```
+npm install emitteth
+```
+
+## Import
+
+```javascript
+import { Emitteth } from 'emitteth'
+```
 
 ## How to register event subscriptions
 
@@ -41,18 +53,6 @@ const getInfuraWebsocketSubprovider = (networkAsString) => {
 
 const web3 = new Web3(getInfuraWebsocketSubprovider('mainnet'))
 // pass `web3` to Emitteth
-```
-
-Installation:
-
-```
-npm install emitteth
-```
-
-Import:
-
-```
-import { Emitteth } from 'emitteth'
 ```
 
 Now you can build Ethereum subscriptions. Some examples:
