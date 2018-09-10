@@ -43,7 +43,19 @@ const web3 = new Web3(getInfuraWebsocketSubprovider('mainnet'))
 // pass `web3` to Emitteth
 ```
 
-Some examples of building Ethereum subscriptions using *Emitteth*:
+Installation:
+
+```
+npm install emitteth
+```
+
+Import:
+
+```
+import { Emitteth } from 'emitteth'
+```
+
+Now you can build Ethereum subscriptions. Some examples:
 
 ### Example 1
 Firstly, *Emitteth* allows you to setup event subscriptions in a generic way by specifying the contract address and the event topics you are interested in. `withFields(...)` limits the fields in the event object. You can specify a number of confirmation blocks after which the events should be emitted by using `withConfirmation(...)`.
