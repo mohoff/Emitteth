@@ -1,9 +1,17 @@
 {
   "name": "emitteth",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Offers a wide range of live event subscriptions for the Ethereum blockchain and supports waiting for a number of confirmed blocks. Built-in convenience API for ERC20 and 0x-exchange events",
   "homepage": "https://github.com/mohoff/Emitteth",
-  "keywords": ["ethereum", "event", "log", "web3", "javascript", "subscription", "smart contract"],
+  "keywords": [
+    "ethereum",
+    "event",
+    "log",
+    "web3",
+    "javascript",
+    "subscription",
+    "smart contract"
+  ],
   "main": "src/emitteth.js",
   "author": "Moritz Hoffmann",
   "license": "MIT",
