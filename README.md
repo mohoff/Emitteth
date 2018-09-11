@@ -71,7 +71,7 @@ const emitteth = new Emitteth(web3)
 
 ### Example 2
 
-For example, you can subscribe to all `traded` and `cancelled` events without filtering for a specific traded token pair. `withNewBlocks(...)` subscribes additionally to `newblock` events and returns the fields that are passed as argument (in the snippet: field `number`).
+You can subscribe to all `traded` and `cancelled` events without filtering for a specific traded token pair. `withNewBlocks(...)` subscribes additionally to `newblock` events and returns the fields that are passed as argument (in the snippet: field `number`).
 
 ```javascript
 const emitteth = new Emitteth(web3)
@@ -97,12 +97,12 @@ You might be interested in all ERC20 `Transfer` event of a specific token contra
 
 ```javascript
 const emitteth3 = new Emitteth(web3)
-  .emitTransfersForToken(token)
+  .emitTransfersForToken('0xe41d2489571d322189246dafa5ebde1f4699f498')
   .start()
 ```
 
 ### Example 4
-Subscription for pending transactions (Careful, flood of events):
+Subscription for pending transactions (careful, flood of events):
 
 ```javascript
 const emitteth = new Emitteth(web3)
